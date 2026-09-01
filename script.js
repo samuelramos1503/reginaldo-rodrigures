@@ -59,7 +59,7 @@ document.addEventListener('DOMContentLoaded', () => {
       cards[currentIdx].scrollIntoView({
         behavior: 'smooth',
         block: 'nearest',
-        inline: 'center'
+        inline: 'start'
       });
 
       if (dots.length > 0) {
