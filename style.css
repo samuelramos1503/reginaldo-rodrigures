@@ -1391,3 +1391,15 @@ button {
     font-size: 1.2rem;
   }
 }
+
+
+.review-nav-btn {
+  pointer-events: auto !important;
+  z-index: 100 !important;
+  cursor: pointer !important;
+  user-select: none;
+}
+
+.review-nav-btn ion-icon {
+  pointer-events: none !important;
+}
