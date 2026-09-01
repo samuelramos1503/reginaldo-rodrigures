@@ -1,5 +1,5 @@
 // ==========================================================================
-// REGINALDO RODRIGUES NUTRICIONISTA — SCRIPT INTERATIVO & RESPONSIVO
+// SCRIPT INTERATIVO DE ALTA PERFORMANCE (MENU, CARROSSEL & FAQ)
 // ==========================================================================
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -14,27 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
       burger.classList.toggle('active', isActive);
       burger.setAttribute('aria-expanded', isActive ? 'true' : 'false');
       document.body.style.overflow = isActive ? 'hidden' : '';
-    
-  // --- 3. ACCORDION FAQ INTERATIVO ---
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isActive = item.classList.contains('active');
-      
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-        q.setAttribute('aria-expanded', 'true');
-      } else {
-        q.setAttribute('aria-expanded', 'false');
-      }
     });
-  });
-
-});
 
     navWrapper.querySelectorAll('.nav-link, .nav-cta').forEach(link => {
       link.addEventListener('click', () => {
@@ -42,362 +22,110 @@ document.addEventListener('DOMContentLoaded', () => {
         burger.classList.remove('active');
         burger.setAttribute('aria-expanded', 'false');
         document.body.style.overflow = '';
-      
-  // --- 3. ACCORDION FAQ INTERATIVO ---
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isActive = item.classList.contains('active');
-      
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-        q.setAttribute('aria-expanded', 'true');
-      } else {
-        q.setAttribute('aria-expanded', 'false');
-      }
+      });
     });
-  });
-
-});
-    
-  // --- 3. ACCORDION FAQ INTERATIVO ---
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isActive = item.classList.contains('active');
-      
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-        q.setAttribute('aria-expanded', 'true');
-      } else {
-        q.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-});
   }
 
-  // --- 2. CARROSSEL DE AVALIAÇÕES COM ROLAGEM HORIZONTAL E AUTO-PLAY ---
+  // --- 2. CARROSSEL DE AVALIAÇÕES (CLIQUE DAS SETAS & TOQUE) ---
   const track = document.getElementById('reviewsTrack');
   const prevBtn = document.getElementById('revPrevBtn');
   const nextBtn = document.getElementById('revNextBtn');
   const dotsContainer = document.getElementById('reviewsDots');
 
   if (track) {
-    const cards = track.querySelectorAll('.review-card');
-    
-    // Create dots
-    cards.forEach((_, idx) => {
-      const dot = document.createElement('div');
-      dot.className = 'carousel-dot' + (idx === 0 ? ' active' : '');
-      dot.addEventListener('click', () => {
-        const cardWidth = cards[0].offsetWidth + 24;
-        track.scrollTo({ left: idx * cardWidth, behavior: 'smooth' 
-  // --- 3. ACCORDION FAQ INTERATIVO ---
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isActive = item.classList.contains('active');
-      
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-        q.setAttribute('aria-expanded', 'true');
-      } else {
-        q.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
+    const cards = Array.from(track.querySelectorAll('.review-card'));
+    let currentIdx = 0;
 
-});
-      
-  // --- 3. ACCORDION FAQ INTERATIVO ---
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isActive = item.classList.contains('active');
-      
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-        q.setAttribute('aria-expanded', 'true');
-      } else {
-        q.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-});
-      dotsContainer.appendChild(dot);
-    
-  // --- 3. ACCORDION FAQ INTERATIVO ---
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isActive = item.classList.contains('active');
-      
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-        q.setAttribute('aria-expanded', 'true');
-      } else {
-        q.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-});
-
-    const dots = dotsContainer.querySelectorAll('.carousel-dot');
-
-    function updateDots() {
-      const cardWidth = cards[0].offsetWidth + 24;
-      const activeIdx = Math.round(track.scrollLeft / cardWidth);
-      dots.forEach((d, i) => {
-        d.classList.toggle('active', i === activeIdx);
-      
-  // --- 3. ACCORDION FAQ INTERATIVO ---
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isActive = item.classList.contains('active');
-      
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-        q.setAttribute('aria-expanded', 'true');
-      } else {
-        q.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-});
+    // Pontos (dots) de navegação
+    if (dotsContainer && dotsContainer.children.length === 0) {
+      cards.forEach((_, idx) => {
+        const dot = document.createElement('div');
+        dot.className = 'carousel-dot' + (idx === 0 ? ' active' : '');
+        dot.addEventListener('click', () => {
+          scrollToIndex(idx);
+        });
+        dotsContainer.appendChild(dot);
+      });
     }
 
-    track.addEventListener('scroll', updateDots, { passive: true 
-  // --- 3. ACCORDION FAQ INTERATIVO ---
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isActive = item.classList.contains('active');
-      
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-        q.setAttribute('aria-expanded', 'true');
-      } else {
-        q.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
+    const dots = dotsContainer ? Array.from(dotsContainer.querySelectorAll('.carousel-dot')) : [];
 
-});
+    function scrollToIndex(index) {
+      if (cards.length === 0) return;
+      if (index < 0) index = 0;
+      if (index >= cards.length) index = cards.length - 1;
+      currentIdx = index;
+
+      cards[currentIdx].scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      });
+
+      if (dots.length > 0) {
+        dots.forEach((d, i) => d.classList.toggle('active', i === currentIdx));
+      }
+    }
+
+    function updateActiveDotOnScroll() {
+      if (cards.length === 0) return;
+      const trackRect = track.getBoundingClientRect();
+      let closestIdx = 0;
+      let minDiff = Infinity;
+
+      cards.forEach((card, idx) => {
+        const cardRect = card.getBoundingClientRect();
+        const diff = Math.abs(cardRect.left - trackRect.left);
+        if (diff < minDiff) {
+          minDiff = diff;
+          closestIdx = idx;
+        }
+      });
+
+      currentIdx = closestIdx;
+      if (dots.length > 0) {
+        dots.forEach((d, i) => d.classList.toggle('active', i === currentIdx));
+      }
+    }
+
+    track.addEventListener('scroll', updateActiveDotOnScroll, { passive: true });
 
     if (prevBtn) {
-      prevBtn.addEventListener('click', () => {
-        const cardWidth = cards[0].offsetWidth + 24;
-        track.scrollBy({ left: -cardWidth, behavior: 'smooth' 
-  // --- 3. ACCORDION FAQ INTERATIVO ---
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isActive = item.classList.contains('active');
-      
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-        q.setAttribute('aria-expanded', 'true');
-      } else {
-        q.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-});
-      
-  // --- 3. ACCORDION FAQ INTERATIVO ---
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isActive = item.classList.contains('active');
-      
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-        q.setAttribute('aria-expanded', 'true');
-      } else {
-        q.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-});
+      prevBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        scrollToIndex(currentIdx - 1);
+      });
     }
 
     if (nextBtn) {
-      nextBtn.addEventListener('click', () => {
-        const cardWidth = cards[0].offsetWidth + 24;
-        track.scrollBy({ left: cardWidth, behavior: 'smooth' 
-  // --- 3. ACCORDION FAQ INTERATIVO ---
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isActive = item.classList.contains('active');
-      
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-        q.setAttribute('aria-expanded', 'true');
-      } else {
-        q.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-});
-      
-  // --- 3. ACCORDION FAQ INTERATIVO ---
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isActive = item.classList.contains('active');
-      
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-        q.setAttribute('aria-expanded', 'true');
-      } else {
-        q.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-});
+      nextBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+        scrollToIndex(currentIdx + 1);
+      });
     }
 
-    // Auto scroll every 5s
-    let autoScrollInterval = setInterval(() => {
-      const maxScroll = track.scrollWidth - track.clientWidth;
-      const cardWidth = cards[0].offsetWidth + 24;
-      if (track.scrollLeft >= maxScroll - 10) {
-        track.scrollTo({ left: 0, behavior: 'smooth' 
-  // --- 3. ACCORDION FAQ INTERATIVO ---
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isActive = item.classList.contains('active');
-      
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-        q.setAttribute('aria-expanded', 'true');
-      } else {
-        q.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
+    // Auto scroll a cada 6s
+    let autoTimer = setInterval(() => {
+      let nextIdx = (currentIdx + 1) % cards.length;
+      scrollToIndex(nextIdx);
+    }, 6000);
 
-});
-      } else {
-        track.scrollBy({ left: cardWidth, behavior: 'smooth' 
-  // --- 3. ACCORDION FAQ INTERATIVO ---
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isActive = item.classList.contains('active');
-      
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-        q.setAttribute('aria-expanded', 'true');
-      } else {
-        q.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-});
-      }
-    }, 5000);
-
-    track.addEventListener('mouseenter', () => clearInterval(autoScrollInterval));
-    track.addEventListener('touchstart', () => clearInterval(autoScrollInterval), { passive: true 
-  // --- 3. ACCORDION FAQ INTERATIVO ---
-  const faqQuestions = document.querySelectorAll('.faq-question');
-  faqQuestions.forEach(q => {
-    q.addEventListener('click', () => {
-      const item = q.parentElement;
-      const isActive = item.classList.contains('active');
-      
-      // Close other items
-      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
-      if (!isActive) {
-        item.classList.add('active');
-        q.setAttribute('aria-expanded', 'true');
-      } else {
-        q.setAttribute('aria-expanded', 'false');
-      }
-    });
-  });
-
-});
+    track.addEventListener('mouseenter', () => clearInterval(autoTimer));
+    track.addEventListener('touchstart', () => clearInterval(autoTimer), { passive: true });
   }
 
-
   // --- 3. ACCORDION FAQ INTERATIVO ---
   const faqQuestions = document.querySelectorAll('.faq-question');
   faqQuestions.forEach(q => {
     q.addEventListener('click', () => {
       const item = q.parentElement;
       const isActive = item.classList.contains('active');
-      
-      // Close other items
+
+      // Fecha outros itens do FAQ
       document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
-      
+
       if (!isActive) {
         item.classList.add('active');
         q.setAttribute('aria-expanded', 'true');
