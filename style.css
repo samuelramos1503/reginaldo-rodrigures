@@ -133,10 +133,10 @@ button {
   height: 48px;
   border-radius: 50%;
   object-fit: contain;
-  background: #ffffff;
-  padding: 4px;
-  border: 1.5px solid var(--color-primary);
-  box-shadow: var(--shadow-sm);
+  background: transparent;
+  padding: 2px;
+  border: 1.5px solid var(--color-primary-border);
+  filter: drop-shadow(0 2px 8px rgba(197, 155, 99, 0.3));
 }
 
 .brand-name {
